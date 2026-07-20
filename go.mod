@@ -1,3 +1,3 @@
-module github.com/reactivego/csg
+module github.com/vibrantgio/csg
 
 go 1.17

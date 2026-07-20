@@ -1,8 +1,8 @@
 # csg
 
-    import "github.com/reactivego/csg"
+    import "github.com/vibrantgio/csg"
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/reactivego/csg.svg)](https://pkg.go.dev/github.com/reactivego/csg#section-documentation)
+[![Go Reference](https://pkg.go.dev/badge/github.com/vibrantgio/csg.svg)](https://pkg.go.dev/github.com/vibrantgio/csg#section-documentation)
 
 ![Example](../assets/example.svg)
 
@@ -10,12 +10,23 @@ Constructive Solid Geometry (CSG) is a modeling technique that uses Boolean oper
 
 Example usage:
 ``` go
-import "github.com/reactivego/csg"
+import "github.com/vibrantgio/csg"
 
 cube := csg.Cube()
 sphere := csg.Sphere(csg.Radius(1.3))
 polygons := cube.Subtract(sphere).Polygons
 ```
+
+## Viewing Solids
+
+This library is purely a modeling kernel: it produces polygons, not pixels.
+To see the results rendered, have a look at the
+[seen](https://github.com/vibrantgio/seen) library, which embeds this code as
+its [`solid`](https://github.com/vibrantgio/seen/tree/master/solid) package.
+Its [solids example](https://github.com/vibrantgio/seen/tree/master/context/gio/example/solids)
+renders the union, difference and intersection of a cube and a sphere side by
+side, interactively with [Gio](https://gioui.org), much like Evan Wallace's
+original csg.js demo.
 
 ## Operations
 
@@ -30,7 +41,7 @@ The operations are rendered below.
 The solids `a` and `b` were generated with the following code:
 
 ```go
-import . "github.com/reactivego/csg"
+import . "github.com/vibrantgio/csg"
 
 a := Cube(Center(-0.25, -0.25, -0.25))
 b := Sphere(Center(0.25, 0.25, 0.25), Radius(1.3))
@@ -51,7 +62,7 @@ Below is a solid constructed from a combination of operations:
 The solids above were generated with the following code:
 
 ```go
-import . "github.com/reactivego/csg"
+import . "github.com/vibrantgio/csg"
 
 a := Cube()
 b := Sphere(Radius(1.35), Stacks(12))
