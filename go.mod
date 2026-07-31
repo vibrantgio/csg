@@ -1,3 +1,3 @@
 module github.com/vibrantgio/csg
 
-go 1.17
+go 1.25.1
