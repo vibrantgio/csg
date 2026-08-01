@@ -4,7 +4,7 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/vibrantgio/csg.svg)](https://pkg.go.dev/github.com/vibrantgio/csg#section-documentation)
 
-![Example](../assets/example.svg)
+![Example](https://raw.githubusercontent.com/vibrantgio/csg/assets/example.svg)
 
 Constructive Solid Geometry (CSG) is a modeling technique that uses Boolean operations like union and intersection to combine 3D solids. This library implements CSG operations on meshes elegantly and concisely using BSP trees, and is meant to serve as an easily understandable implementation of the algorithm. All edge cases involving overlapping coplanar polygons in both solids are correctly handled.
 
@@ -33,7 +33,7 @@ original csg.js demo.
 This library provides three CSG operations: union, subtract, and intersect.
 The operations are rendered below.
 
-| ![Cube](../assets/cube.svg) | ![Sphere](../assets/sphere.svg) |
+| ![Cube](https://raw.githubusercontent.com/vibrantgio/csg/assets/cube.svg) | ![Sphere](https://raw.githubusercontent.com/vibrantgio/csg/assets/sphere.svg) |
 |:---:|:---:|
 | `a` | `b` |
 
@@ -47,7 +47,7 @@ a := Cube(Center(-0.25, -0.25, -0.25))
 b := Sphere(Center(0.25, 0.25, 0.25), Radius(1.3))
 ```
 
-| ![Union](../assets/union.svg) | ![Subtract](../assets/subtract.svg) | ![Intersect](../assets/intersect.svg) |
+| ![Union](https://raw.githubusercontent.com/vibrantgio/csg/assets/union.svg) | ![Subtract](https://raw.githubusercontent.com/vibrantgio/csg/assets/subtract.svg) | ![Intersect](https://raw.githubusercontent.com/vibrantgio/csg/assets/intersect.svg) |
 |:---:|:---:|:---:|
 | `a.Union(b)`| `a.Subtract(b)` | `a.Intersect(b)` |
 
@@ -55,7 +55,7 @@ b := Sphere(Center(0.25, 0.25, 0.25), Radius(1.3))
 
 Below is a solid constructed from a combination of operations:
 
-| ![Cube](../assets/a.svg) | ![Sphere](../assets/b.svg) | ![Cylinder X](../assets/c.svg) | ![Cylinder Y](../assets/d.svg) | ![Cylinder Z](../assets/e.svg) |
+| ![Cube](https://raw.githubusercontent.com/vibrantgio/csg/assets/a.svg) | ![Sphere](https://raw.githubusercontent.com/vibrantgio/csg/assets/b.svg) | ![Cylinder X](https://raw.githubusercontent.com/vibrantgio/csg/assets/c.svg) | ![Cylinder Y](https://raw.githubusercontent.com/vibrantgio/csg/assets/d.svg) | ![Cylinder Z](https://raw.githubusercontent.com/vibrantgio/csg/assets/e.svg) |
 |:---:|:---:|:---:|:---:|:---:|
 | `a` | `b` | `c` | `d` | `e` |
 
@@ -71,7 +71,7 @@ d := Cylinder(Radius(0.7), Start(0, -1, 0), End(0, 1, 0))
 e := Cylinder(Radius(0.7), Start(0, 0, -1), End(0, 0, 1))
 ```
 
-| ![Combined](../assets/combined.svg) |
+| ![Combined](https://raw.githubusercontent.com/vibrantgio/csg/assets/combined.svg) |
 |:---:|
 | `a.Intersect(b).Subtract(c.Union(d).Union(e))` |
 
@@ -111,6 +111,16 @@ a.AddPolygons(b.AllPolygons())
 Subtraction and intersection naturally follow from set operations. If
 union is `A | B`, subtraction is `A - B = ~(~A | B)` and intersection is
 `A & B = ~(~A | ~B)` where `~` is the complement operator.
+
+## For coding assistants
+
+Read the canonical guide before writing code against this module — the module
+inventory with current tags, the application skeleton, MVU and rx semantics,
+typography, and the pitfalls that are not guessable:
+
+<https://raw.githubusercontent.com/vibrantgio/.github/master/llms.txt>
+
+[`AGENTS.md`](./AGENTS.md) in this repository has the build and test commands.
 
 ## Acknowledgments
 
