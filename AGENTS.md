@@ -9,14 +9,16 @@ handled.
 
 **Layer.** Outside ADR-001's tier table: a support library, which the rule
 binds in one direction only — every tier may import it, and it may import
-nothing in the table itself. That nothing here consumes it is deliberate:
-seen carries an adaptation of the same algorithm as its own `solid`
-package, rewritten onto seen's `point`, `face` and `transform` types so
-that a solid is a `seen.Object`, rather than importing this module. Its
-root module imports nothing else in the organization. Both directions are
-measured rather than typed — `scripts/check-layers.sh --edges` reports the
-graph and `scripts/sync-agents.sh` renders these sentences from it — so
-correcting them here changes nothing.
+nothing in the table itself. It is constructive solid geometry over BSP
+trees — `Union`, `Intersect` and `Subtract` on a `*Solid` — and it depends
+on nothing but the standard library. Its root module imports nothing else
+in the organization. That direction is measured rather than typed —
+`scripts/check-layers.sh --edges` reports the graph and
+`scripts/sync-agents.sh` renders these sentences from it — so correcting
+them here changes nothing. The other direction is measured too and
+deliberately not written down: the gate checks the graph both ways, but a
+public API's consumers are unknowable, so this file says what its module
+needs and never who needs it.
 
 **Read the canonical guide before you write code against this module.** It is
 the organization's one agent guide — the module inventory with current tags,
