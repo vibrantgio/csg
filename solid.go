@@ -16,17 +16,16 @@ func SolidFromPolygons(polygons Polygons) *Solid {
 // Union returns a new CSG solid representing space in either this solid or
 // in the solid `csg`. Neither this solid nor the solid `csg` are modified.
 //
-//     A.Union(B)
+//	A.Union(B)
 //
-//     +-------+            +-------+
-//     |       |            |       |
-//     |   A   |            |       |
-//     |    +--+----+   =   |       +----+
-//     +----+--+    |       +----+       |
-//          |   B   |            |       |
-//          |       |            |       |
-//          +-------+            +-------+
-//
+//	+-------+            +-------+
+//	|       |            |       |
+//	|   A   |            |       |
+//	|    +--+----+   =   |       +----+
+//	+----+--+    |       +----+       |
+//	     |   B   |            |       |
+//	     |       |            |       |
+//	     +-------+            +-------+
 func (s *Solid) Union(other *Solid) *Solid {
 	a, b := &BSP{}, &BSP{}
 	a.AddPolygons(s.Polygons.Clone())
@@ -43,17 +42,16 @@ func (s *Solid) Union(other *Solid) *Solid {
 // Subtract returns a new CSG solid representing space in this solid but not
 // in the solid `csg`. Neither this solid nor the solid `csg` are modified.
 //
-//     A.Subtract(B)
+//	A.Subtract(B)
 //
-//     +-------+            +-------+
-//     |       |            |       |
-//     |   A   |            |       |
-//     |    +--+----+   =   |    +--+
-//     +----+--+    |       +----+
-//          |   B   |
-//          |       |
-//          +-------+
-//
+//	+-------+            +-------+
+//	|       |            |       |
+//	|   A   |            |       |
+//	|    +--+----+   =   |    +--+
+//	+----+--+    |       +----+
+//	     |   B   |
+//	     |       |
+//	     +-------+
 func (s *Solid) Subtract(other *Solid) *Solid {
 	a, b := &BSP{}, &BSP{}
 	a.AddPolygons(s.Polygons.Clone())
@@ -72,17 +70,16 @@ func (s *Solid) Subtract(other *Solid) *Solid {
 // Intersect returns a new CSG solid representing space both this solid and in
 // the solid `csg`. Neither this solid nor the solid `csg` are modified.
 //
-//     A.intersect(B)
+//	A.intersect(B)
 //
-//     +-------+
-//     |       |
-//     |   A   |
-//     |    +--+----+   =   +--+
-//     +----+--+    |       +--+
-//          |   B   |
-//          |       |
-//          +-------+
-//
+//	+-------+
+//	|       |
+//	|   A   |
+//	|    +--+----+   =   +--+
+//	+----+--+    |       +--+
+//	     |   B   |
+//	     |       |
+//	     +-------+
 func (s *Solid) Intersect(other *Solid) *Solid {
 	a, b := &BSP{}, &BSP{}
 	a.AddPolygons(s.Polygons.Clone())

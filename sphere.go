@@ -10,12 +10,11 @@ import "math"
 //
 // Example usage:
 //
-//     sphere := csg.Sphere(
-//       Center(0, 0, 0),
-//       Radius(1),
-//       Slices(16),
-//       Stacks(8))
-//
+//	sphere := csg.Sphere(
+//	  Center(0, 0, 0),
+//	  Radius(1),
+//	  Slices(16),
+//	  Stacks(8))
 func Sphere(options ...Option) *Solid {
 	o := OptionsFrom(options)
 	c := o.Center

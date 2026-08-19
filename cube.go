@@ -7,10 +7,9 @@ package csg
 //
 // Example code:
 //
-//     cube := csg.Cube(
-//       csg.Center(0, 0, 0),
-//       csg.Size(2, 2, 2))
-//
+//	cube := csg.Cube(
+//	  csg.Center(0, 0, 0),
+//	  csg.Size(2, 2, 2))
 func Cube(options ...Option) *Solid {
 	o := OptionsFrom(options)
 	faces := [][]int{

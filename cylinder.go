@@ -11,12 +11,11 @@ import (
 //
 // Example usage:
 //
-//     cylinder := csg.Cylinder(
-//       Start(0, -1, 0),
-//       End(0, 1, 0),
-//       Radius(1),
-//       Slices(16))
-//
+//	cylinder := csg.Cylinder(
+//	  Start(0, -1, 0),
+//	  End(0, 1, 0),
+//	  Radius(1),
+//	  Slices(16))
 func Cylinder(options ...Option) *Solid {
 	o := OptionsFrom(options)
 	s := o.Start

@@ -6,9 +6,8 @@ import "math"
 //
 // Example usage:
 //
-//     csg.Vector{1, 2, 3}
-//     csg.Vector{X: 1, Y: 2, Z: 3}
-//
+//	csg.Vector{1, 2, 3}
+//	csg.Vector{X: 1, Y: 2, Z: 3}
 type Vector struct {
 	X, Y, Z float64
 }
