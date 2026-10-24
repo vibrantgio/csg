@@ -21,8 +21,7 @@ polygons := cube.Subtract(sphere).Polygons
 
 This library is purely a modeling kernel: it produces polygons, not pixels.
 To see the results rendered, have a look at the
-[seen](https://github.com/vibrantgio/seen) library, which embeds this code as
-its [`solid`](https://github.com/vibrantgio/seen/tree/master/solid) package.
+[seen](https://github.com/vibrantgio/seen) library.
 Its [solids example](https://github.com/vibrantgio/seen/tree/master/context/gio/example/solids)
 renders the union, difference and intersection of a cube and a sphere side by
 side, interactively with [Gio](https://gioui.org), much like Evan Wallace's
@@ -116,14 +115,12 @@ union is `A | B`, subtraction is `A - B = ~(~A | B)` and intersection is
 
 Read the org guide before you write code against this module: the plan
 root's [`AGENTS.md`](https://github.com/vibrantgio/organisation/blob/master/AGENTS.md).
-
-[`AGENTS.md`](./AGENTS.md) in this repository has the build and test commands.
+The build and test commands are reached from that file.
 
 ## Acknowledgments
 
-This package is a direct conversion of [cgs.js](http://evanw.github.io/csg.js/) to Go.
+This package is a direct conversion of [csg.js](http://evanw.github.io/csg.js/) to Go.
 The original JavaScript code was written by Evan Wallace and committed to git on November 30, 2011.
-As an odd coincidence, I am writing this a full 10 years later on Nov 30, 2021.
 
 ## License
 
